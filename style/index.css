@@ -1,0 +1,187 @@
+*, body, html{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+}
+
+#main
+{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main #head
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 16px auto;
+    height: 50%;
+    width: 100%;
+
+    /* max-width: 100%; */
+}
+
+#main h1
+{
+    color: white;
+    padding-left: 5%;
+}
+
+.container
+{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container .case
+{
+position: relative;
+margin: 100px;
+}
+
+.container .case .card
+{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    /* padding: 80px 40px; */
+    /* margin: 80px; */
+    display: flex;
+    align-items: flex-end;
+    background: rgb(211, 208, 208);
+    box-shadow: 2px 4px 25px rgb(0 0 0 / 90%);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;  
+}
+
+.container .case .card:hover
+{
+    transform: translateY(-20px)
+}
+
+.container .case .card::before
+{
+    content: "";
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(226, 224, 224, 0.5), rgb(54, 54, 54, 1));
+    z-index: 2;
+    transition: 0.5s all;
+    opacity: 0;
+}
+
+
+
+.container .case .card:hover:before
+{
+   opacity: 1;
+}
+
+.card #img_box
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* position: absolute;
+    height: 300px;
+    width: 300px;
+    display: block;
+    border-radius: 12px; */
+}
+
+
+
+.case .card .content
+{
+    position: relative;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+
+/* .card:hover .content
+{
+    opacity: 1;
+    transform: translateY(30px);
+    transition: 0.5s all;
+} */
+/* .case .name:active .content
+{
+    opacity: 1;
+} */
+
+.case .card:hover .content
+{
+    opacity: 1;
+    transform: translateY(30px);
+    transition: 0.5s all;
+
+}
+
+.case .name
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, rgb(226, 224, 224, 0.1), rgb(54, 54, 54, 0));
+    transition: 0.5s ease-in-out;
+    text-align: center;
+    width: 300px;
+}
+.case .name .appear
+{
+    visibility: hidden;
+    opacity: 0;
+    
+    
+}
+
+
+.case .name:focus .appear
+{
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+
+
+
+
+
+/* @media screen and (min-width: 900px) 
+{
+    .card {
+        flex: 1 1 calc(33% - 16px);
+    }
+}
+
+@media screen and (min-width: 600px)
+{
+    .card {
+        flex: 1 1 calc(50% - 32px);
+    }
+} */
